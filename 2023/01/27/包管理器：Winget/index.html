@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Winget | 蛋挞小店</title><meta name="author" content="不吃蛋挞的蛋挞"><meta name="copyright" content="不吃蛋挞的蛋挞"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="介绍Windows Package Manager（也叫 winget）是一个 Windows 软件包管理器，它由一个命令行工具和一组用于在 Windows 10 上安装应用的服务组成。winget 可以帮助使用者快速轻松地发现地安装不同的工具 安装支持范围WinGet 支持 Windows 10 1709 及以上版本 安装方式Microsoft Store 或是加入 Windows 10 Ins">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Winget">
+<meta property="og:url" content="http://example.com/2023/01/27/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9AWinget/index.html">
+<meta property="og:site_name" content="蛋挞小店">
+<meta property="og:description" content="介绍Windows Package Manager（也叫 winget）是一个 Windows 软件包管理器，它由一个命令行工具和一组用于在 Windows 10 上安装应用的服务组成。winget 可以帮助使用者快速轻松地发现地安装不同的工具 安装支持范围WinGet 支持 Windows 10 1709 及以上版本 安装方式Microsoft Store 或是加入 Windows 10 Ins">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/head.png">
+<meta property="article:published_time" content="2023-01-27T10:54:44.285Z">
+<meta property="article:modified_time" content="2023-01-27T11:00:17.634Z">
+<meta property="article:author" content="不吃蛋挞的蛋挞">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/head.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2023/01/27/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9AWinget/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Winget',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-27 19:00:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="蛋挞小店"><span class="site-name">蛋挞小店</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Winget</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-27T10:54:44.285Z" title="发表于 2023-01-27 18:54:44">2023-01-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-01-27T11:00:17.634Z" title="更新于 2023-01-27 19:00:17">2023-01-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Winget"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>Windows Package Manager（也叫 winget）是一个 Windows 软件包管理器，它由一个命令行工具和一组用于在 Windows 10 上安装应用的服务组成。winget 可以帮助使用者快速轻松地发现地安装不同的工具</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="支持范围"><a href="#支持范围" class="headerlink" title="支持范围"></a>支持范围</h3><p>WinGet 支持 Windows 10 1709 及以上版本</p>
+<h3 id="安装方式"><a href="#安装方式" class="headerlink" title="安装方式"></a>安装方式</h3><h4 id="Microsoft-Store"><a href="#Microsoft-Store" class="headerlink" title="Microsoft Store"></a>Microsoft Store</h4><ul>
+<li>或是加入 <a target="_blank" rel="noopener" href="https://insider.windows.com/">Windows 10 Insider</a>，并下载安装 Windows Insider 版本的系统</li>
+<li>或是通过<a target="_blank" rel="noopener" href="http://aka.ms/winget-InsiderProgram">官方注册通道</a>来将自己加入 WinGet Preview flight ring</li>
+</ul>
+<h4 id="GitHub-Release"><a href="#GitHub-Release" class="headerlink" title="GitHub Release"></a>GitHub Release</h4><p>通过<a target="_blank" rel="noopener" href="https://github.com/microsoft/winget-cli">WinGet 的官方 GitHub 仓库</a>，<a target="_blank" rel="noopener" href="https://github.com/microsoft/winget-cli/releases">在 Release 页面</a>手动下载 WinGet 的安装程序进行手动安装</p>
+<h2 id="使用命令"><a href="#使用命令" class="headerlink" title="使用命令"></a>使用命令</h2><p>在CMD或者PowerShell使用WinGet</p>
+<h2 id="WinGet-CLI-设置"><a href="#WinGet-CLI-设置" class="headerlink" title="WinGet CLI 设置"></a>WinGet CLI 设置</h2><p>您可以通过编辑文件来配置 WinGet。运行将在默认 json 编辑器中打开该文件，如果没有配置编辑器，则使用记事.exe纸。<code>settings.json``winget settings</code></p>
+<h3 id="文件位置"><a href="#文件位置" class="headerlink" title="文件位置"></a>文件位置</h3><p>设置文件位于 %LOCALAPPDATA%&#x3D;包\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe状态\设置.json</p>
+<p>如果您使用非打包的 WinGet 版本，通过从源代码构建它，该文件将位于 %LOCALAPPDATA% {微软}WinGet&#x3D;Settings.json 下</p>
+<h3 id="源"><a href="#源" class="headerlink" title="源"></a>源</h3><p>这些设置涉及对 WinGet 源的配置。<code>source</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;autoUpdateIntervalInMinutes&quot;</span><span class="punctuation">:</span> <span class="number">3</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="自动更新InterinMinutes"><a href="#自动更新InterinMinutes" class="headerlink" title="自动更新InterinMinutes"></a>自动更新InterinMinutes</h4><p>正整数表示更新间隔（以分钟为单位）。只有在使用源时，才检查更新。零将禁用对源更新的检查。任何其他值都无效。</p>
+<ul>
+<li>禁用： 0</li>
+<li>默认值： 5</li>
+</ul>
+<p>手动更新源使用<code>winget source update</code></p>
+<h3 id="视觉"><a href="#视觉" class="headerlink" title="视觉"></a>视觉</h3><p>这些设置涉及 WinGet 显示的可视元素<code>visual</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;visual&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;progressBar&quot;</span><span class="punctuation">:</span> <span class="string">&quot;accent&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="进度栏"><a href="#进度栏" class="headerlink" title="进度栏"></a>进度栏</h4><p>WinGet 在参数未指定时显示的进度条的颜色。</p>
+<ul>
+<li>accent (default)                  + 重音（默认）</li>
+<li>retro                                   + 复古</li>
+<li>rainbow                              + 彩虹</li>
+</ul>
+<h3 id="实验功能"><a href="#实验功能" class="headerlink" title="实验功能"></a>实验功能</h3><p>为了完成工作并分发给早期采用者进行反馈，可以使用设置启用”实验”功能。</p>
+<p>这些设置涉及这些”实验”功能的配置。可以在此节点下启用单个功能。下面的示例显示了实验功能示例。<code>experimentalFeatures</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;experimentalFeatures&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;experimentalCmd&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;experimentalArg&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="实验商店"><a href="#实验商店" class="headerlink" title="实验商店"></a>实验商店</h4><p>WinGet 中的 Microsoft 应用商店应用支持目前作为实验功能实现。它支持来自 Microsoft 应用商店的精选实用程序应用列表。您可以启用此功能，如下所示。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;experimentalFeatures&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;experimentalMSStore&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><p>当列表中的工作正在进行中时，该命令隐藏在功能切换后面。可以启用如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;experimentalFeatures&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;list&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h4><p>在升级工作进行中，该命令隐藏在功能切换后面。可以启用如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;experimentalFeatures&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;upgrade&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h4><p>卸载工作正在进行中，该命令隐藏在功能切换后面。可以启用如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;experimentalFeatures&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;uninstall&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line"><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">不吃蛋挞的蛋挞</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/01/27/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9AWinget/">http://example.com/2023/01/27/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9AWinget/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">蛋挞小店</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/head.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/01/27/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9AScoop/" title="Scoop"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Scoop</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">不吃蛋挞的蛋挞</div><div class="author-info__description">一个小小的blog</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E8%8C%83%E5%9B%B4"><span class="toc-number">2.1.</span> <span class="toc-text">支持范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F"><span class="toc-number">2.2.</span> <span class="toc-text">安装方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Microsoft-Store"><span class="toc-number">2.2.1.</span> <span class="toc-text">Microsoft Store</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GitHub-Release"><span class="toc-number">2.2.2.</span> <span class="toc-text">GitHub Release</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">3.</span> <span class="toc-text">使用命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WinGet-CLI-%E8%AE%BE%E7%BD%AE"><span class="toc-number">4.</span> <span class="toc-text">WinGet CLI 设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span class="toc-number">4.1.</span> <span class="toc-text">文件位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BA%90"><span class="toc-number">4.2.</span> <span class="toc-text">源</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0InterinMinutes"><span class="toc-number">4.2.1.</span> <span class="toc-text">自动更新InterinMinutes</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E8%A7%89"><span class="toc-number">4.3.</span> <span class="toc-text">视觉</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9B%E5%BA%A6%E6%A0%8F"><span class="toc-number">4.3.1.</span> <span class="toc-text">进度栏</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8A%9F%E8%83%BD"><span class="toc-number">4.4.</span> <span class="toc-text">实验功能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%95%86%E5%BA%97"><span class="toc-number">4.4.1.</span> <span class="toc-text">实验商店</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">4.5.</span> <span class="toc-text">列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7"><span class="toc-number">4.5.1.</span> <span class="toc-text">升级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%B8%E8%BD%BD"><span class="toc-number">4.5.2.</span> <span class="toc-text">卸载</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/27/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9AWinget/" title="Winget">Winget</a><time datetime="2023-01-27T10:54:44.285Z" title="发表于 2023-01-27 18:54:44">2023-01-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/27/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9AScoop/" title="Scoop">Scoop</a><time datetime="2023-01-27T10:54:44.283Z" title="发表于 2023-01-27 18:54:44">2023-01-27</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/27/%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%EF%BC%9AChocolatey/" title="Chocolatey">Chocolatey</a><time datetime="2023-01-27T10:54:44.281Z" title="发表于 2023-01-27 18:54:44">2023-01-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 不吃蛋挞的蛋挞</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
